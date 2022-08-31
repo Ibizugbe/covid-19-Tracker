@@ -17,7 +17,10 @@ function Nav() {
             <li className="nav-link">
               <h1>COVID Statitics</h1>
             </li>
-            <li className="nav-link"></li>
+            <li className="nav-link">
+              <span className="mic"></span>
+              <span className="settings"></span>
+            </li>
           </ul>
         </nav>
       </header>

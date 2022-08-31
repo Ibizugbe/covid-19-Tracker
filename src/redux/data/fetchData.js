@@ -1,18 +1,34 @@
-const FETCH_DATA = 'covid-data/data/FETCH_DATA';
+import axios from 'axios';
 
-const fetchResult = (payload) => ({
-  type: FETCH_DATA,
-  payload,
-});
-const initialState = [];
-const resultReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_DATA:
-      return [...state, ...action.payload];
+const apiUrl = 'https://disease.sh/v3/covid-19/countries';
 
-    default:
-      return state;
-  }
+const fetchData = async () => {
+  const covidData = [];
+  const response = await axios.get(apiUrl);
+  const myResponse = response.data;
+
+  myResponse.map(({ countryInfo: { _id: id, flag }, ...data }) => {
+    const covidResults = {
+      continent: data.continent,
+      country: data.country,
+      country_id: id,
+      country_flag: flag,
+      total_cases: data.cases,
+      total_deaths: data.deaths,
+      total_recovered: data.recovered,
+      total_active: data.active,
+      total_tests: data.tests,
+      population: data.population,
+      todays_cases: data.todayCases,
+      todays_deaths: data.todayDeaths,
+      todays_recovered: data.todayRecovered,
+    };
+
+    covidData.push(covidResults);
+    return covidData;
+  });
+  return covidData;
 };
 
-export { fetchResult, resultReducer };
+export default fetchData;
+
