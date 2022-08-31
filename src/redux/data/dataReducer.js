@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const apiUrl = 'https://disease.sh/v3/covid-19/countries';
 
@@ -28,6 +28,6 @@ const fetchData = async () => {
     return covidData;
   });
   return covidData;
-}
+};
 
 export default fetchData;
