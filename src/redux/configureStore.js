@@ -3,10 +3,10 @@ import {
 } from '@reduxjs/toolkit/query/react';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { reducerResult } from './news/resultReducer';
+import { resultReducer } from './data/fetchData';
 
 const rootReducer = combineReducers({
-  results: reducerResult,
+  results: resultReducer,
 });
 
 const store = configureStore(rootReducer, compose(applyMiddleware(thunk, logger)));
