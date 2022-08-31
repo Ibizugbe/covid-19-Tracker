@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { generate } from 'randomized-string';
+import { v4 as uuidv4 } from 'uuid';
 import { FaSearch } from 'react-icons/fa';
 import fetchData from '../redux/data/fetchData';
 import { fetchResult } from '../redux/data/dataReducer';
@@ -50,7 +50,7 @@ const DisplayLists = () => {
           {covidCountry.map((country) => (
             <Link
               className="a"
-              key={generate()}
+              key={uuidv4()}
               to={{ pathname: `/country/${country.country}` }}
             >
               <li className="list-details">
