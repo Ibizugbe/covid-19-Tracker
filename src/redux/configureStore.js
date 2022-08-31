@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit/query/react';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { resultReducer } from './data/fetchData';
+import { resultReducer } from './data/dataReducer';
 
 const rootReducer = combineReducers({
   results: resultReducer,
