@@ -31,4 +31,3 @@ const fetchData = async () => {
 };
 
 export default fetchData;
-

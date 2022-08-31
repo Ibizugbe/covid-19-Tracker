@@ -7,8 +7,8 @@ import fetchData from '../redux/data/fetchData';
 import { fetchResult } from '../redux/data/dataReducer';
 import './covidLists.css';
 
-const NewsBody = () => {
-  const results = useSelector((state) => state.results);
+const DisplayLists = () => {
+  const results = useSelector((state) => state.covidData);
   const dispatch = useDispatch();
   useEffect(() => {
     if (results.length === 0) {
@@ -78,4 +78,4 @@ const NewsBody = () => {
   );
 };
 
-export default NewsBody;
+export default DisplayLists;

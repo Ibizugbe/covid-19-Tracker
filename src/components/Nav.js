@@ -1,31 +1,31 @@
 function Nav() {
-  return ( 
+  return (
     <>
       <header>
         <nav>
           <ul>
             <li className="nav-link">
               {
-                window.location.pathname === '/' 
-                ? (
-                  <span>Home</span>
-                ): (
-                  <button>Back</button>
-                )
+                window.location.pathname === '/'
+                  ? (
+                    <span>Home</span>
+                  ) : (
+                    <button type="button">Back</button>
+                  )
               }
             </li>
             <li className="nav-link">
               <h1>COVID Statitics</h1>
             </li>
             <li className="nav-link">
-              <span className="mic"></span>
-              <span className="settings"></span>
+              <span className="mic" />
+              <span className="settings" />
             </li>
           </ul>
         </nav>
       </header>
     </>
-   );
+  );
 }
 
 export default Nav;

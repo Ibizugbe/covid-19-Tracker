@@ -5,7 +5,7 @@ import fetchData from '../redux/data/fetchData';
 import { fetchResult } from '../redux/data/dataReducer';
 import './covidLists.css';
 
-const CovidList = () => {
+const CovidLists = () => {
   const results = useSelector((state) => state.covidData);
   const dispatch = useDispatch();
   const { name } = useParams();
@@ -79,4 +79,4 @@ const CovidList = () => {
     </>
   );
 };
-export default CovidList;
+export default CovidLists;
