@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FaSearch } from 'react-icons/fa';
 import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const DisplayLists = () => {
   const results = useSelector((state) => state.result);

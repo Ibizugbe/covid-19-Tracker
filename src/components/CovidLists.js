@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const CovidLists = () => {
   const results = useSelector((state) => state.result);
