@@ -1,4 +1,9 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Nav() {
+  useNavigate();
+  console.log(window.location.pathname);
   return (
     <>
       <header>

@@ -6,6 +6,7 @@ import './covidLists.css';
 
 const CovidLists = () => {
   const results = useSelector((state) => state.result);
+  console.log(results);
   const dispatch = useDispatch();
   const { name } = useParams();
 

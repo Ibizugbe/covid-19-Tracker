@@ -8,7 +8,6 @@ import './covidLists.css';
 
 const DisplayLists = () => {
   const results = useSelector((state) => state.result);
-  console.log(results);
   const dispatch = useDispatch();
   useEffect(() => {
     if (results.length === 0) {
@@ -16,7 +15,7 @@ const DisplayLists = () => {
     }
   }, [results.length, dispatch]);
 
-  let covidCountry = results.filter((result) => result.continent === 'Europe');
+  let covidCountry = results.filter((result) => result.continent === 'Africa');
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const search = query.get('search') || '';
