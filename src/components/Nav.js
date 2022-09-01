@@ -1,26 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './nav.css';
 
 function Nav() {
-  useNavigate();
-  console.log(window.location.pathname);
+  const navigate = useNavigate();
   return (
     <>
       <header>
         <nav>
-          <ul>
+          <ul className="nav-ul">
             <li className="nav-link">
               {
                 window.location.pathname === '/'
                   ? (
                     <span>Home</span>
                   ) : (
-                    <button type="button">Back</button>
+                    <button type="button" onClick={() => navigate(-1)}>Back</button>
                   )
               }
             </li>
-            <li className="nav-link">
-              <h1>COVID Statitics</h1>
+            <li className="nav-link covid-header">
+              COVID Statitics
             </li>
             <li className="nav-link">
               <span className="mic" />
