@@ -1,13 +1,18 @@
 import {
-  combineReducers, applyMiddleware, compose, configureStore,
-} from '@reduxjs/toolkit/query/react';
+  combineReducers, applyMiddleware, configureStore,
+} from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { resultReducer } from './data/fetchData';
 
 const rootReducer = combineReducers({
-  results: resultReducer,
+  result: resultReducer,
 });
 
-const store = configureStore(rootReducer, compose(applyMiddleware(thunk, logger)));
+const store = configureStore(
+  {
+    reducer: rootReducer,
+  },
+  applyMiddleware(thunk, logger),
+);
 export default store;
