@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { FaSearch } from 'react-icons/fa';
-import fetchData from '../redux/data/fetchData';
-import { fetchResult } from '../redux/data/dataReducer';
+import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
 
 const DisplayLists = () => {
-  const results = useSelector((state) => state.covidData);
+  const results = useSelector((state) => state.result);
+  console.log(results);
   const dispatch = useDispatch();
   useEffect(() => {
     if (results.length === 0) {
@@ -16,7 +16,7 @@ const DisplayLists = () => {
     }
   }, [results.length, dispatch]);
 
-  let covidCountry = results.filter((result) => result.continent === 'Africa');
+  let covidCountry = results.filter((result) => result.continent === 'Europe');
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const search = query.get('search') || '';

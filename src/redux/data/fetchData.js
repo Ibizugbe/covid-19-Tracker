@@ -1,13 +1,21 @@
-import axios from 'axios';
-
+const FETCH_DATA = 'covid-data/data/FETCH_DATA';
 const apiUrl = 'https://disease.sh/v3/covid-19/countries';
 
-const fetchData = async () => {
-  const covidData = [];
-  const response = await axios.get(apiUrl);
-  const myResponse = response.data;
+// store
+const initialState = [];
 
-  myResponse.map(({ countryInfo: { _id: id, flag }, ...data }) => {
+// action
+export const fetchResult = (payload) => ({
+  type: FETCH_DATA,
+  payload,
+});
+
+// fetch api
+const fetchData = async () => {
+  const result = [];
+  const res = await fetch(apiUrl);
+  const covidData = await res.json();
+  covidData.map(({ countryInfo: { _id: id, flag }, ...data }) => {
     const covidResults = {
       continent: data.continent,
       country: data.country,
@@ -23,11 +31,22 @@ const fetchData = async () => {
       todays_deaths: data.todayDeaths,
       todays_recovered: data.todayRecovered,
     };
-
-    covidData.push(covidResults);
-    return covidData;
+    result.push(covidResults);
+    return result;
   });
-  return covidData;
+
+  return result;
+};
+
+// reducer
+export const resultReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_DATA:
+      return [...state, ...action.payload];
+
+    default:
+      return state;
+  }
 };
 
 export default fetchData;

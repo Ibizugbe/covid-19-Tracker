@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import fetchData from '../redux/data/fetchData';
-import { fetchResult } from '../redux/data/dataReducer';
+import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
 
 const CovidLists = () => {
-  const results = useSelector((state) => state.covidData);
+  const results = useSelector((state) => state.result);
   const dispatch = useDispatch();
   const { name } = useParams();
 
