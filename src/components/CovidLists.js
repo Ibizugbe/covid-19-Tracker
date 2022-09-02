@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const CovidLists = () => {
   const results = useSelector((state) => state.result);
@@ -17,62 +18,69 @@ const CovidLists = () => {
   });
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid covid-contain">
         <div className="continent">
-          <h1 className="selected-name">{name}</h1>
-          <img
-            src={selectedCountry.country_flag}
-            alt="national-flag"
-            className="national-flag1"
-          />
+          <h1 className="selected-name text-center">{name}</h1>
+          <div className="img-div d-flex justify-content-center py-3">
+            <img
+              src={selectedCountry.country_flag}
+              alt="national-flag"
+              className="national-flag1"
+            />
+          </div>
         </div>
-        <div>
-          <ul className="today">
-            <h3> Today&apos;s update:</h3>
-            <li>
-              <h4>New cases:</h4>
-              {' '}
-              {selectedCountry.todays_cases.toLocaleString()}
-            </li>
-            <li>
-              <h4>Confirmed deaths:</h4>
-              {' '}
-              {selectedCountry.todays_deaths.toLocaleString()}
-            </li>
-            <li>
-              <h4>New Recoveries:</h4>
-              {' '}
-              {selectedCountry.todays_recovered.toLocaleString()}
-            </li>
-          </ul>
-          <ul className="total">
-            <h3>Total:</h3>
-            <li>
-              <h4>Confirmed cases:</h4>
-              {' '}
-              {selectedCountry.total_cases.toLocaleString()}
-            </li>
-            <li>
-              <h4>Recovered:</h4>
-              {' '}
-              {selectedCountry.total_recovered.toLocaleString()}
-            </li>
-            <li>
-              <h4>Active Cases:</h4>
-              {' '}
-              {selectedCountry.total_active.toLocaleString()}
-            </li>
-            <li>
-              <h4>Total Tests:</h4>
-              {' '}
-              {selectedCountry.total_tests.toLocaleString()}
-            </li>
-            <li>
-              <h4>Deaths:</h4>
-              {' '}
-              {selectedCountry.total_deaths.toLocaleString()}
-            </li>
-          </ul>
+        <div className="row d-flex justify-content-center">
+          <div className="col-12 col-md-6 col-lg-4">
+            <h2 className="text-center">Today&apos;s update</h2>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>New Cases</th>
+                  <th>Confirmed death</th>
+                  <th>New Recoveries</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{selectedCountry.todays_cases.toLocaleString()}</td>
+                  <td>{selectedCountry.todays_deaths.toLocaleString()}</td>
+                  <td>{selectedCountry.todays_recovered.toLocaleString()}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 className="text-center">Total cases</h3>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Confirmed cases</th>
+                  <th>Recovered</th>
+                  <th>Active Cases</th>
+                  <th>Total Tests</th>
+                  <th>Deaths</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {selectedCountry.total_cases.toLocaleString()}
+                  </td>
+                  <td>
+                    {selectedCountry.total_recovered.toLocaleString()}
+                  </td>
+                  <td>
+                    {selectedCountry.total_active.toLocaleString()}
+                  </td>
+                  <td>
+                    {selectedCountry.total_tests.toLocaleString()}
+                  </td>
+                  <td>
+                    {selectedCountry.total_deaths.toLocaleString()}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>
