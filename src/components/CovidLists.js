@@ -29,7 +29,7 @@ const CovidLists = () => {
             />
           </div>
         </div>
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-6 col-lg-4">
             <h2 className="text-center">Today&apos;s update</h2>
             <table className="table">

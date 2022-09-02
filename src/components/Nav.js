@@ -9,7 +9,7 @@ function Nav() {
     <>
       <header>
         <nav className="p-2 px-lg-4 py-lg-3">
-          <ul className="nav-ul">
+          <ul className="nav-ul mb-0">
             <li className="nav-link">
               {
                 window.location.pathname === '/'
