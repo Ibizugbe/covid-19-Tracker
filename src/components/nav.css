@@ -7,9 +7,14 @@ ul {
   list-style: none;
 }
 
+nav {
+  background-color: #ec4e8a;
+}
+
 .nav-ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .covid-header {

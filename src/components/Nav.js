@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BsMicFill, BsFillGearFill } from 'react-icons/bs';
 import './nav.css';
 
 function Nav() {
@@ -7,7 +8,7 @@ function Nav() {
   return (
     <>
       <header>
-        <nav>
+        <nav className="p-2 px-lg-4 py-lg-3">
           <ul className="nav-ul">
             <li className="nav-link">
               {
@@ -15,7 +16,7 @@ function Nav() {
                   ? (
                     <span>Home</span>
                   ) : (
-                    <button type="button" onClick={() => navigate(-1)}>Back</button>
+                    <button type="button" className="btn bg-dark text-white px-2" onClick={() => navigate(-1)}>Back</button>
                   )
               }
             </li>
@@ -23,8 +24,8 @@ function Nav() {
               COVID Statitics
             </li>
             <li className="nav-link">
-              <span className="mic" />
-              <span className="settings" />
+              <span className="pe-3"><BsMicFill /></span>
+              <span><BsFillGearFill /></span>
             </li>
           </ul>
         </nav>

@@ -32,47 +32,50 @@ const DisplayLists = () => {
   return (
     <>
 
-      <div className="Search-sec">
-        <h3 className="area">Africa</h3>
-        <form className="form">
-          <div className="search-bar">
-            <input
-              className="form-input"
-              type="text"
-              value={searchValue}
-              placeholder="Search country"
-              onChange={filterFunction}
-            />
-            <FaSearch />
+      <div className="container-fluid px-4 covid-contain">
+        <ul className="row px-0">
+          <div className="col-12">
+            <h3 className="text-center">Africa</h3>
+            <form className="form d-flex justify-content-center align-items-center">
+              <div className="mb-3 border px-3 py-2">
+                <input
+                  className="search"
+                  type="text"
+                  value={searchValue}
+                  placeholder="Search country"
+                  onChange={filterFunction}
+                />
+                <FaSearch />
+              </div>
+            </form>
           </div>
-        </form>
-        <ul className="list-country">
           {covidCountry.map((country) => (
             <Link
-              className="a"
+              className="col-6 px-0"
               key={uuidv4()}
               to={{ pathname: `/country/${country.country}` }}
             >
-              <li className="list-details">
-                <div className=" details">
-                  <h1 className="name">{country.country}</h1>
-                </div>
-                <div>
-                  <h2 className="population">Population:</h2>
-                  {' '}
-                  <p className="number">{country.population.toLocaleString()}</p>
-                </div>
-                <div className="photo">
-                  <img
-                    src={country.country_flag}
-                    alt="national flag"
-                    className="national-flag"
-                  />
-                </div>
-              </li>
+              <div className="card mx-2 border-0 mb-3 p-3 my-card">
+                <li className="list-items d-lg-flex">
+                  <div className="card-image">
+                    <img
+                      src={country.country_flag}
+                      alt="national flag"
+                      className="img-fluid country-flag"
+                    />
+                  </div>
+                  <div className="card-details px-3">
+                    <h1 className="country-name">{country.country}</h1>
+                    <h2 className="population d-inline">Population:</h2>
+                    {' '}
+                    <p className="country-population d-inline">{country.population.toLocaleString()}</p>
+                  </div>
+                </li>
+              </div>
             </Link>
           ))}
         </ul>
+
       </div>
     </>
   );

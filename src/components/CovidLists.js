@@ -18,7 +18,7 @@ const CovidLists = () => {
   });
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid covid-contain">
         <div className="continent">
           <h1 className="selected-name">{name}</h1>
           <img
@@ -27,53 +27,55 @@ const CovidLists = () => {
             className="national-flag1"
           />
         </div>
-        <div>
-          <ul className="today">
-            <h3> Today&apos;s update:</h3>
-            <li>
-              <h4>New cases:</h4>
-              {' '}
-              {selectedCountry.todays_cases.toLocaleString()}
-            </li>
-            <li>
-              <h4>Confirmed deaths:</h4>
-              {' '}
-              {selectedCountry.todays_deaths.toLocaleString()}
-            </li>
-            <li>
-              <h4>New Recoveries:</h4>
-              {' '}
-              {selectedCountry.todays_recovered.toLocaleString()}
-            </li>
-          </ul>
-          <ul className="total">
-            <h3>Total:</h3>
-            <li>
-              <h4>Confirmed cases:</h4>
-              {' '}
-              {selectedCountry.total_cases.toLocaleString()}
-            </li>
-            <li>
-              <h4>Recovered:</h4>
-              {' '}
-              {selectedCountry.total_recovered.toLocaleString()}
-            </li>
-            <li>
-              <h4>Active Cases:</h4>
-              {' '}
-              {selectedCountry.total_active.toLocaleString()}
-            </li>
-            <li>
-              <h4>Total Tests:</h4>
-              {' '}
-              {selectedCountry.total_tests.toLocaleString()}
-            </li>
-            <li>
-              <h4>Deaths:</h4>
-              {' '}
-              {selectedCountry.total_deaths.toLocaleString()}
-            </li>
-          </ul>
+        <div className="row">
+          <div className="col-12 col-md-6 col-lg-4">
+            <ul className="today">
+              <h3> Today&apos;s update:</h3>
+              <li>
+                <h4>New cases:</h4>
+                {' '}
+                {selectedCountry.todays_cases.toLocaleString()}
+              </li>
+              <li>
+                <h4>Confirmed deaths:</h4>
+                {' '}
+                {selectedCountry.todays_deaths.toLocaleString()}
+              </li>
+              <li>
+                <h4>New Recoveries:</h4>
+                {' '}
+                {selectedCountry.todays_recovered.toLocaleString()}
+              </li>
+            </ul>
+            <ul className="total">
+              <h3>Total:</h3>
+              <li>
+                <h4>Confirmed cases:</h4>
+                {' '}
+                {selectedCountry.total_cases.toLocaleString()}
+              </li>
+              <li>
+                <h4>Recovered:</h4>
+                {' '}
+                {selectedCountry.total_recovered.toLocaleString()}
+              </li>
+              <li>
+                <h4>Active Cases:</h4>
+                {' '}
+                {selectedCountry.total_active.toLocaleString()}
+              </li>
+              <li>
+                <h4>Total Tests:</h4>
+                {' '}
+                {selectedCountry.total_tests.toLocaleString()}
+              </li>
+              <li>
+                <h4>Deaths:</h4>
+                {' '}
+                {selectedCountry.total_deaths.toLocaleString()}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </>
