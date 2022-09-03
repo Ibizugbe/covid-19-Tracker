@@ -78,8 +78,8 @@ Give a star if you like this project!
 
 ## Acknowledgments
 
-- Microverse linters
-- Coding partners
+- Microverse
+- Design Inspiration from [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
