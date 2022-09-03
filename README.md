@@ -56,7 +56,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-- [Visit here](https://space-travellers-97.netlify.app/)
+- [Visit here](https://covid19-tracker-97.netlify.app/)
 
 ## Authors
 
