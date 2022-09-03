@@ -35,3 +35,7 @@ a {
 .my-card {
   background-color: #ec4e8a !important;
 }
+
+.table-div {
+  overflow-x: auto;
+}

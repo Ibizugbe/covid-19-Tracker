@@ -29,10 +29,10 @@ const CovidLists = () => {
             />
           </div>
         </div>
-        <div className="row d-flex justify-content-center">
-          <div className="col-12 col-md-6 col-lg-4">
+        <div className="row d-flex justify-content-center ">
+          <div className="col-12 col-md-6 col-lg-4 table-div">
             <h2 className="text-center">Today&apos;s update</h2>
-            <table className="table">
+            <table className="table my-table">
               <thead>
                 <tr>
                   <th>New Cases</th>
@@ -50,7 +50,7 @@ const CovidLists = () => {
             </table>
 
             <h3 className="text-center">Total cases</h3>
-            <table className="table">
+            <table className="table my-table">
               <thead>
                 <tr>
                   <th>Confirmed cases</th>
