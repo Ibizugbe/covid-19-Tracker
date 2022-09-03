@@ -2,23 +2,19 @@
 
 ## Covid-19 Tracker
 
+
 > This is a web application built with react and redux. It uses an API to get covid statitics in African countries and renders it on the page.
 
 ## Built With
-
 - HTML
 - Boostrap
 - JavaScript
 - React JS
 - Redux
 - React Testing library
-
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
-
 - Webhint (A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors).
-
 - Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
-
 - ESlint (A mighty, modern linter that helps you avoid errors and enforce conventions in JavaScript codes)
 
 ## Project Screenshots
@@ -26,6 +22,8 @@
 ![Mission page](./screenshot/mission.png)
 ![Rocket page](./screenshot/rocket.png)
 ![Profile page](./screenshot/profile.png)
+
+View project Video [here](https://www.loom.com/share/6dde5bc7703a44aba7b853fb496bdd29)
 
 ## Getting Started
 
