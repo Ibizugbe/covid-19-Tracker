@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { FaSearch } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import fetchData, { fetchResult } from '../redux/data/fetchData';
 import './covidLists.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const DisplayLists = () => {
+  AOS.init();
   const results = useSelector((state) => state.result);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -51,6 +54,7 @@ const DisplayLists = () => {
           </div>
           {covidCountry.map((country) => (
             <Link
+              data-aos="zoom-in-up"
               className="col-6 px-0"
               key={uuidv4()}
               to={{ pathname: `/country/${country.country}` }}

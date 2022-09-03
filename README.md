@@ -19,9 +19,10 @@
 
 ## Project Screenshots
 
-![Mission page](./screenshot/mission.png)
-![Rocket page](./screenshot/rocket.png)
-![Profile page](./screenshot/profile.png)
+![Mission page](./assets/country-desktop.png)
+![Rocket page](./assets/country-list-desktop.png)
+![Profile page](./assets/country-list-mobile.png)
+![Profile page](./assets/country-mobile.png)
 
 View project Video [here](https://www.loom.com/share/6dde5bc7703a44aba7b853fb496bdd29)
 
